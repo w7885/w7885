@@ -1,4 +1,5 @@
 ## Hi there 👋
+Hello, I’m a student majoring in Computer Science and Technology at Guangdong University of Technology. Here, I document my personal projects, learning journey, and growth.
 
 <!--
 **w7885/w7885** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
