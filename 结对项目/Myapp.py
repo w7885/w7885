@@ -2,13 +2,12 @@ import argparse
 import random
 import re
 from fractions import Fraction
-
 # ----------------------------
 # 常量
 # ----------------------------
 
 MAX_OPS = 3              # 每题最多运算符个数
-MAX_ATTEMPTS_FACTOR = 300  # 生成题目时最大尝试次数 = n * 该系数
+MAX_ATTEMPTS_FACTOR = 300 # 生成题目时最大尝试次数 = n * 该系数
 OPS = ["+", "−", "×", "÷"]
 
 
@@ -174,24 +173,33 @@ class Node:
             return self.text
         return f"{self.left.to_expr()} {self.op} {self.right.to_expr()}"
 
-    def _flatten(self, op):
-        """把同一运算符的连续子节点扁平化，用于处理结合律"""
-        if self.op == op:
-            return self.left._flatten(op) + self.right._flatten(op)
-        return [self]
+    def flatten(self, target_op):
+        if self.left is None and self.right is None:
+            return [self]
+        if self.op == target_op:
+            return self.left.flatten(target_op) + self.right.flatten(target_op)
+        else:
+            return [self]
 
     def signature(self):
-        """
-        去重签名：
-        - + 和 × 满足交换律和结合律，扁平化后排序
-        - − 和 ÷ 不满足，保持左右顺序
-        """
-        if self.op is None:
-            return ("num", str(self.value))
+        # 叶子数字节点
+        if self.left is None and self.right is None:
+            return ("num", self.text)
+
+        # 递归拿到左右子节点签名
+        ls = self.left.signature()
+        rs = self.right.signature()
+
         if self.op in ("+", "×"):
-            parts = self._flatten(self.op)
-            return (self.op, tuple(sorted(p.signature() for p in parts)))
-        return (self.op, self.left.signature(), self.right.signature())
+            # 摊平所有连续相同运算符
+            flat_nodes = self.flatten(self.op)
+            flat_sigs = [node.signature() for node in flat_nodes]
+            # 核心：对子项签名列表排序，消除顺序差异（交换律+结合律）
+            flat_sigs.sort()
+            return (self.op, tuple(flat_sigs))
+        else:
+            # 减法、除法，不摊平，不排序，左右顺序严格区分
+            return (self.op, ls, rs)
 
 
 def make_number_node(r: int) -> Node:
@@ -289,7 +297,8 @@ def generate_exercises(n: int, r: int):
             f.write(f"{i}.{a}\n")
 
     print(f"已生成 {len(exercises)} 道题目，保存到 Exercises.txt 和 Answers.txt。")
-
+    # =========新增返回值，给单元测试使用，CLI完全不受影响=========
+    return list(signatures)
 
 # ----------------------------
 # 批改
