@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd1a21ae-88b4-4791-aab3-43f6951c189f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/plagiarism detection.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/plagiarism detection.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cd1a21ae-88b4-4791-aab3-43f6951c189f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +33,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -58,6 +56,7 @@
       <workItem from="1789215498769" duration="53000" />
       <workItem from="1789388227193" duration="141000" />
       <workItem from="1789388416450" duration="717000" />
+      <workItem from="1789961532935" duration="81000" />
     </task>
     <servers />
   </component>
