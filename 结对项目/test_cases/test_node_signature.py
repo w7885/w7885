@@ -22,14 +22,14 @@ def test_mul_commute_dup():
     expr_b = Node(op="×", left=n2, right=n1)
     assert expr_a.signature() == expr_b.signature()
 
-def test_add_associate_dup():
-    """(1+2)+3 和1+(2+3) 重复"""
+def test_add_associate_not_dup():
+    """(1+2)+3 和 1+(2+3) 不重复（只处理交换律）"""
     n1 = Node(value=Fraction(1), text="1")
     n2 = Node(value=Fraction(2), text="2")
     n3 = Node(value=Fraction(3), text="3")
     expr1 = Node(op="+", left=Node(op="+", left=n1, right=n2), right=n3)
     expr2 = Node(op="+", left=n1, right=Node(op="+", left=n2, right=n3))
-    assert expr1.signature() == expr2.signature()
+    assert expr1.signature() != expr2.signature()
 
 def test_chain_add_reverse_not_dup():
     """(1+2)+3 和(3+2)+1 不重复"""

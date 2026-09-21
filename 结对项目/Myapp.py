@@ -182,24 +182,13 @@ class Node:
             return [self]
 
     def signature(self):
-        # 叶子数字节点
-        if self.left is None and self.right is None:
-            return ("num", self.text)
-
-        # 递归拿到左右子节点签名
-        ls = self.left.signature()
-        rs = self.right.signature()
-
-        if self.op in ("+", "×"):
-            # 摊平所有连续相同运算符
-            flat_nodes = self.flatten(self.op)
-            flat_sigs = [node.signature() for node in flat_nodes]
-            # 核心：对子项签名列表排序，消除顺序差异（交换律+结合律）
-            flat_sigs.sort()
-            return (self.op, tuple(flat_sigs))
-        else:
-            # 减法、除法，不摊平，不排序，左右顺序严格区分
-            return (self.op, ls, rs)
+         if self.op is None:
+             return ("num", str(self.value))
+         ls = self.left.signature()
+         rs = self.right.signature()
+         if self.op in ("+", "×"):
+             return (self.op, tuple(sorted([ls, rs])))
+         return (self.op, ls, rs)
 
 
 def make_number_node(r: int) -> Node:
