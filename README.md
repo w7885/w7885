@@ -12,6 +12,11 @@ I use this space to document projects, experiments, and what I learn along the w
 
 ## Featured Projects
 
+- [Marketing Hub](https://github.com/yruichen/marketing-hub)  
+  A team project for AI-assisted marketing content and workflow management.
+  I contributed to requirements analysis, user research, project coordination,
+  and development support.
+
 - [Resume Rehearsal Agent](https://github.com/w7885/resume-rehearsal-agent)  
   A resume revision web app that uses an agent to ask follow-up questions and propose edits for users to review.
 
