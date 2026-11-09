@@ -1,17 +1,33 @@
-## Hi there 👋
-Hello, I’m a student majoring in Computer Science and Technology at Guangdong University of Technology. Here, I document my personal projects, learning journey, and growth.
+# Hi, I'm w7885 👋
 
-<!--
-**w7885/w7885** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm a Computer Science and Technology student at Guangdong University of Technology.
+I use this space to document projects, experiments, and what I learn along the way.
 
-Here are some ideas to get you started:
+## About Me
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- 🔭 Exploring how to turn user problems into practical software
+- 🌱 Learning about AI products, software delivery, and automated testing
+- 🎯 Working toward a Forward Deployed Engineer internship
+- 💡 Interested in the intersection of product thinking and engineering
+
+## Featured Projects
+
+- [Resume Rehearsal Agent](https://github.com/w7885/resume-rehearsal-agent)  
+  A resume revision web app that uses an agent to ask follow-up questions and propose edits for users to review.
+
+- [Codex Usage Bar](https://github.com/w7885/codex-usage-bar)  
+  A Windows desktop utility that displays Codex usage information.
+
+- [Codex Completion Reminder](https://github.com/w7885/codex-completion-reminder)  
+  A Windows tray companion exploring task-completion and conversation-choice reminders for Codex Desktop.
+
+- [Project Chat Flow](https://github.com/w7885/project-chat-flow)  
+  A Codex skill for recording project status and handing work between chats.
+
+## Currently Learning
+
+- Python and web automation with Selenium
+- APIs, debugging, and software delivery
+- AI-assisted development and human-in-the-loop workflows
+
+Thanks for stopping by! 👋
